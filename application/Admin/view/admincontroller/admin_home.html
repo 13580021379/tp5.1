@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>管理员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="_css_/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="_css_/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+
+    <!-- Bootstrap AdminController Theme -->
+    <link href="_css_/bootstrap-admin-theme.css" rel="stylesheet" media="screen">
+
+    <!-- Vendors -->
+    <link href="_css_/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+    <link href="_css_/jquery.easy-pie-chart_custom.css" rel="stylesheet" media="screen">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+
+    <script type="text/javascript" src="_js_/html5shiv.js"></script>
+    <script type="text/javascript" src="_js_/respond.min.js"></script>
+    <script type="text/javascript" src="_js_/jquery.min.js"></script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="_js_/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_js_/twitter-bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="_js_/jquery.easy-pie-chart.js"></script>
+
+    <!--引入jQuerydataTable的js和css-->
+    <!--<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
+    <!--<script type="text/javascript" src="_js_/jquery.dataTables.min.js"></script>-->
+
+    <!--引入bootstrap table的js和css-->
+    <link href="_css_/bootstrap-table.min.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="_js_/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="_js_/bootstrap-table-zh-CN.js"></script>
+<!--导入自定义的学生信息表js文件-->
+    <script type="text/javascript" src="_js_/adminJS/student_table_data.js"></script>
+    <!--导入自定义的教师信息表js文件-->
+    <script type="text/javascript" src="_js_/teacher_table_data.js"></script>
+
+
+
+    <!--导入summernote-->
+    <script type="text/javascript" src="_js_/adminJS/to_inform.js"></script>
+    <script type="text/javascript" src="_js_/summernote.js"></script>
+    <script type="text/javascript" src="_js_/summernote-zh-CN.js"></script>
+    <link href="_css_/summernote.css" rel="stylesheet" media="screen">
+<!--导入paginathing.js文件-->
+    <script type="text/javascript" src="_js_/paginathing.js"></script>
+    <script type="text/javascript" src="_js_/adminJS/main_page.js"></script>
+</head>
+<body class="bootstrap-admin-with-small-navbar">
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top " role="navigation">
+    <div class="container">
+        <div class="row">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            < class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">首页</a></li>
+                    <li ><a href="about.html">关于我们</a></li>
+
+                </ul>
+                <form class="navbar-form navbar-left" role="search" action="about.html">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入用户信息内容">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理员<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">查看信息</a> </li>
+
+                            <li class="divider"></li>
+                            <li><a href="{:url('loginRegister/logincontroller/login_view')}">退出登录</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- left, vertical navbar & content -->
+    <div class="row">
+        <!-- left, vertical navbar -->
+        <div class="col-md-2 bootstrap-admin-col-left">
+            <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
+                <li class="active">
+                    <a href="#" id="main_page"><i class="glyphicon glyphicon-chevron-right"></i> 首页</a>
+                </li>
+                <li>
+                    <a href="#" id="student_data"><i class="glyphicon glyphicon-chevron-right"></i> 用户数据</a>
+                </li>
+
+                <li >
+                    <a href="about.html"><i class="glyphicon glyphicon-chevron-right"></i>师生反映问题</a>
+                </li>
+                <li>
+                    <a href="download" id="download" ><i class="glyphicon glyphicon-chevron-right"></i> 文件记录</a>
+                </li>
+                <li>
+                    <a href="#" id="to_inform"><i class="glyphicon glyphicon-chevron-right"></i> 发通知</a>
+                </li>
+                <li>
+                    <a href="https://www.zhku.edu.cn/"><i class="glyphicon glyphicon-chevron-right"></i>学校官网</a>
+                </li>
+                <li>
+                    <a href="http://jw.zhku.edu.cn/home.aspx"><i class="glyphicon glyphicon-chevron-right"></i>学校教务网</a>
+                </li>
+                <li>
+                    <a href="ui-and-interface.html"><i class="glyphicon glyphicon-chevron-right"></i> UI界面</a>
+                </li>
+                <li>
+                    <a href="#"><span class="badge pull-right">731</span> 订单</a>
+                </li>
+                <li>
+                    <a href="#"><span class="badge pull-right">812</span> 清单</a>
+                </li>
+                <li>
+                    <a href="#"><span class="badge pull-right">27</span> 客户</a>
+                </li>
+                <li>
+                    <a href="#"><span class="badge pull-right">1,234</span> 用户</a>
+                </li>
+                <li>
+                    <a href="#"><span class="badge pull-right">2,221</span> 消息</a>
+                </li>
+                <li>
+                    <a href="#"><span class="badge pull-right">11</span> 报告</a>
+                </li>
+                <li>
+                    <a href="#"><span class="badge pull-right">83</span> 错误</a>
+                </li>
+                <li>
+                    <a href="#"><span class="badge pull-right">4,231</span> 日志</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- content这个包括全部 -->
+        <div class="col-md-10" >
+            <div class="row bootstrap-admin-no-edges-padding">
+
+                <!--首页超链接-->
+                <div class="panel panel-primary" id="main_page_div" >
+                    <div class="panel-heading">
+                        <h3 class="panel-title">所有通知<span class="badge pull-right" id="inform_total"></span></h3>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div>
+
+                <!--summernote编辑器-->
+                <form action="#"  method="post" id="summernote_form" style="display: none;">
+                   <div><span>通知标题</span><input type="text" class="form-control" id="title" placeholder="请输入标题" style="width:50%"></div>
+                 <div  id="summernote"></div>
+
+
+                    <button class="btn btn-primary btn-w-m" type="button" id="put" ><span>发布</span></button>
+                </form>
+                <!--用户信息-->
+                <div class="col-md-6"  style="width: 100%;display:none"  id="student_data_div">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" >
+                            <div class="text-muted bootstrap-admin-box-title">用户信息</div>
+                            <div class="pull-right"><span class="badge" id="student_num"></span></div>
+                        </div>
+                        <div class="search" style="margin-top: 50px">
+                        <div class="col-sm-3">
+                            <!-- 自定义搜索框 -->
+                            <input type="text" name="searchString" id="student_search_text" class="form-control" placeholder="请输入查询内容" onkeydown="javascript:if(event.keyCode==13) searchId();" />
+                        </div>
+                        <div class="col-sm-1">
+                            <button type="button" class="btn btn-primary btn-w-m" id="search_btn">
+                                <span class="glyphicon glyphicon-search"></span> 搜索
+                            </button>
+                        </div>
+                            </div>
+                        <div class="bootstrap-admin-panel-content">
+                            <table class="table table-hover" id="student_data_table" >
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>用户名</th>
+                                    <th>性别</th>
+                                    <th>email</th>
+                                    <th>密码</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                            <tbody id="student_data_body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--统计-->
+                    <div class="row" id="student_pre">
+                        <div class="panel panel-default bootstrap-admin-no-table-panel" >
+                            <div class="panel-heading" style="text-align: center">
+                                <div class="text-muted bootstrap-admin-box-title" >用户信息男女比例统计</div>
+                            </div>
+                            <div class="bootstrap-admin-panel-content bootstrap-admin-no-table-panel-content collapse in"  >
+                                <div >
+                                    <div class="easyPieChart" id="student_pie"  data-percent="1" style="width: 110px; height: 110px; line-height: 110px; "><span id="student_display_pre"></span><canvas width="110" height="110"></canvas></div>
+                                    <div class="chart-bottom-heading"><span class="label label-info">男女比例</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--上传附件的模态框-->
+<!-- 按钮触发模态框 -->
+<div class="modal fade" id="up_file_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">请选择上传文件（文件仅提供用户查看下载）</h4>
+            </div>
+
+            <form enctype="multipart/form-data" action="publish_file" method="POST" id="publish_file_form">
+                <div class="modal-body"><h5>请输入该文件的标题(该标题作为通知标题)</h5><input  class="form-control" type="text" name="file_title"/></div>
+                <div class="modal-body"><h5>请选择你要上传的文件</h5><input class="form-control" type="file" id="upload_file_context" name="file"/></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary" id="publish_file_ok">上传文件</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+</body>
+</html>

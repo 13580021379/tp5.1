@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0  maximum-scale=1.0, user-scalable=no">
+    <title>注册</title>
+    <!--导入bootstrap的css样式-->
+    <link rel="stylesheet"  type="text/css"  href="_css_/bootstrap.min.css"/>
+    <link rel="stylesheet"  type="text/css"  href="_css_/bootstrap-theme.min.css"/>
+    <link href="_css_/bootstrap-admin-theme.css" rel="stylesheet" media="screen">
+    <!--自定义css样式login.css-->
+    \
+
+
+    <!--导入js-->
+    <script src="_js_/jquery.min.js"></script>
+    <script src="_js_/bootstrap.min.js"></script>
+    <script src="_js_/register/register.js"></script>
+    <script type="text/javascript" src="_js_/html5shiv.js"></script>
+    <script type="text/javascript" src="_js_/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="bootstrap-admin-without-padding">
+<div class="container">
+    <div class="alert alert-success" style="text-align: center">请按要求正确填写注册信息</div>
+    <div class="row">
+        <form method="post" id="register_form" action="" class="bootstrap-admin-login-form">
+            <h1 style="float: left;">注册</h1>
+            <div class="form-group">
+                <td width="33%"><input class="form-control" type="text" id="username" oninput = "value=value.replace(/[^\d]/g,'')" placeholder="填写你的纯数字手机号"></td>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" id="userpsw" placeholder="设置6位以上的密码">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" id="confirm_userpsw" placeholder="确认密码">
+            </div>
+            <div class="form-group" style="width: 50%">
+                <td > <select  class="form-control" id="sex" >
+                    <option value="男">男
+                    <option value="女">女
+                </select> </td>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text"  id="email" required pattern="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$" title="请输入正确的邮箱格式"
+                placeholder="你的邮箱">
+            </div>
+
+            <div style="float: left;margin-right: 50%">
+                <button class="btn btn-lg btn-primary" type="button" id="register">注册</button>
+            </div>
+            <button class="btn btn-lg btn-primary" type="reset">重置</button>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0  maximum-scale=1.0, user-scalable=no">
+    <title>登陆</title>
+    <!--导入bootstrap的css样式-->
+    <link rel="stylesheet"  type="text/css"  href="_css_/bootstrap.min.css"/>
+    <link rel="stylesheet"  type="text/css"  href="_css_/bootstrap-theme.min.css"/>
+    <link href="_css_/bootstrap-admin-theme.css" rel="stylesheet" media="screen">
+    <!--自定义css样式login.css-->
+    \
+
+
+    <!--导入js-->
+    <script src="_js_/jquery.min.js"></script>
+    <script src="_js_/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_js_/html5shiv.js"></script>
+    <script type="text/javascript" src="_js_/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="bootstrap-admin-without-padding">
+<div class="container">
+    <div class="row">
+        <div class="alert alert-info" style=" text-align: center">
+            <a class="close" data-dismiss="alert" href="#">&times;</a>
+            请输入正确的用户名，密码和验证码！
+        </div>
+        <form method="post" action="{:url()}" class="bootstrap-admin-login-form">
+            <h1>登录</h1>
+            <div class="form-group">
+
+                <td width="33%"><input class="form-control" type="text" name="username" placeholder="用户名"></td>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="userpsw" placeholder="密码">
+            </div>
+            <div class="form-group">
+                <td > <select  class="form-control" name="role" >
+                    <option value="student">学生
+                    <option value="teacher">教师
+                    <option value="admin">管理员
+                </select> </td>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="code" placeholder="填写下面的验证码" data-validate="required:请填写右侧的验证码" />
+
+            </div>
+            <div class="form-group">
+                <img style="width: 120px;margin-right:80px" id="cap" alt="验证码" title="点击刷新"  onclick="this.src='{:captcha_src()}'" src="{:captcha_src()}"/>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="remember_me">
+                    记住密码不咯
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary" type="submit">提交</button>
+            <button class="btn btn-lg btn-primary" type="reset">重置</button>
+        </form>
+
+        <!--<td>　<form method="post" action="">-->
+        <!--<table width="45%" border="1" cellspacing="0" cellpadding="1" align="center"-->
+        <!--bordercolordark="#ecf5ff" bordercolorlight="#6699cc">-->
+        <!--<tr>-->
+        <!--<td><table width="100%" border="0" cellspacing="1" cellpadding="1">-->
+        <!--<tr>-->
+        <!--<td width="33%" align="right" height="30"><span class="glyphicon glyphicon-user">用户名</span></td>-->
+        <!--<td width="67%" class="input-group"><input  class="form-control" name="username" maxlength="20"  size="20"> </td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td width="33%" align="right" height="30"><span class="glyphicon glyphicon-adjust">密码：</span></td>-->
+        <!--<td width="67%" class="input-group"><input  class="form-control" type="password" name="userpsw" maxlength="16"-->
+        <!--size="20"> </td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td width="33%" align="right" height="30"><span class="glyphicon glyphicon-user">身份：</span></td>-->
+        <!--<td width="67%"> <select  class="input-group" name="role">-->
+        <!--<option value="student">学生-->
+        <!--<option value="teacher">教师-->
+        <!--<option value="admin">管理员-->
+        <!--</select> </td>-->
+        <!--</tr>-->
+        <!--<tr><td width="33%" align="right" height="30"><span class="glyphicon glyphicon-gift">验证码：</span></td>-->
+        <!--<td  width="67%" class="input-group"><input type="text" class="form-control" name="code" placeholder="填写右侧的验证码" data-validate="required:请填写右侧的验证码" /></td>-->
+        <!--<td><img style="width: 120px;margin-right:80px" id="cap" alt="验证码" title="点击刷新"  onclick="this.src='{:captcha_src()}'" src="{:captcha_src()}"/>​</td>-->
+        <!--</tr>-->
+        <!--</table>-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--<tr align="center">-->
+        <!--<td height="40">-->
+        <!--<div class="btn-group btn-group-lg">-->
+        <!--<input type="submit" name="Submit" value="确定">-->
+        <!--&nbsp;-->
+        <!--<input type="reset" name="Submit2" value="重写">-->
+        <!--</div>-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--</table>-->
+        <!--</form>-->
+        <!--　</td>-->
+
+    </div>
+</div>
+
+</body>
+</html>
